@@ -23,8 +23,16 @@ This portfolio showcases my **skills, projects, and contact information** in a c
 ---
 
 ## 🌐 Live Demo
-🔗 [View Portfolio Website](https://vaibhavjd0911.github.io/Portfolio/)  
+🔗 [View Portfolio Website](https://vaibhavjd0911.github.io/My_Portfollio/)  
 
 ---
 
-## 📂 Project Structure
+## 📥 Clone this Repository
+To get a local copy up and running, run:
+
+```bash
+# Clone the repository
+git clone https://github.com/VaibhavJD0911/Portfolio.git
+
+# Navigate into the project folder
+cd Portfolio
