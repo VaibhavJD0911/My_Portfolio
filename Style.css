@@ -1,0 +1,491 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+}
+
+header {
+  padding: 15px 50px;
+  background-color: #111
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: aquamarine;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+   text-align: center;
+  gap: 70px;
+  font-size: 1.2rem;
+}
+
+.nav-links a {
+  color: aquamarine;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: aquamarine;
+  font-size: 1.5rem;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 150px;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.highlight {
+  color: aquamarine;
+}
+
+.Bold {
+  color: aquamarine;
+}
+
+
+.icons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+  font-size: 2rem;
+  text-align: center;
+  padding-right: 355px;
+}
+
+.icons a {
+  text-decoration: none;
+  color: aquamarine;             /* default color */
+  border: 2px solid aquamarine;
+  border-radius: 5px;
+  padding: 5px;
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect - enlarge slightly */
+.icons a:hover {
+  transform: scale(1.2);
+box-shadow: 0 0 30px currentColor, 0 0 40px currentColor;
+}
+
+/* Brand hover colors */
+.icons a.github:hover { color: blue; }        /* GitHub black */
+.icons a.linkedin:hover { color: skyblue; }  /* LinkedIn blue */
+.icons a.whatsapp:hover { color: #25D366; }  /* WhatsApp green */
+.icons a.email:hover { color: #d44638; }     /* Gmail red */
+
+
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: aquamarine;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+  box-shadow: 0 0 15px aquamarine;
+}
+
+
+/* Hover Effect */
+.image-frame:hover {
+  transform: scale(1.05);
+}
+
+.image-frame {
+  border: 4px solid aquamarine;
+  border-radius: 15px;
+  padding: 6px;
+  background: black;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+  position: relative;   /* IMPORTANT for ::before & ::after */
+}
+
+.image-frame img {
+  width: 480px;
+  height: 480px;
+  border-radius: 15px;
+  display: block;
+}
+
+/* Add glowing animated border */
+.image-frame::after,
+.image-frame::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+  background-image: conic-gradient(from var(--angle), transparent, aquamarine);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  padding: 8px; /* spacing around circle */
+  animation: spin 3s linear infinite;
+}
+
+.image-frame::before {
+  filter: blur(1.5rem);
+  opacity: 1.5;
+}
+
+.Box {
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  flex-wrap: wrap;
+  padding: 20px;
+  position: relative;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.Container {
+  background: black;
+  width: 300px;
+  height: 450px;
+  padding: 20px;
+  border: solid aquamarine;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.Container::after,
+.Container::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), transparent, aquamarine); /* FIXED */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  border-radius: 15px;
+  animation: spin 3s linear infinite;
+}
+
+.Container::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  from { --angle: 0deg; }
+  to { --angle: 360deg; }
+}
+
+
+.skills {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+/* Each skill box */
+.skills li {
+  background: #1a1a1a;
+  border-radius: 0.8rem;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.skills li:hover {
+  background: #222;
+  box-shadow: 0 4px 12px rgba(0, 255, 170, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Icons */
+.skills li i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: aquamarine;
+}
+
+.skills li i.bxl-java {color:#f89820;} 
+.skills li i.bxl-python {color:#3776AB;} 
+.skills li i.bxl-html5 {color:#E34F26;} 
+.skills li i.bxl-css3 {color:#1572B6;} 
+.skills li i.bxl-javascript {color:#F7DF1E;} 
+.skills li i.bxs-data {color:#4479A1;} 
+.skills li i.jdbc {color:#f89820;} 
+.skills li i.j2ee {color:#f89820;} 
+.skills li i.bxs-cog {color:#6DB33F;} 
+.skills li i.bxl-react {color:#61DAFB;} 
+.skills li i.hibernate {color:#59666C;}
+
+
+
+.projects-box {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.project-card {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  border: solid aquamarine;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  display: block;
+}
+
+/* Overlay */
+.project-info {
+  position: absolute;
+  bottom: -100%; /* hidden initially */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1rem;
+  transition: bottom 0.4s ease;
+  text-align: center;
+}
+
+.project-card:hover .project-info {
+  bottom: 0;
+}
+
+.project-info h3 {
+  color: aquamarine;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.project-info p {
+  color: #ddd;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1rem;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+/* Buttons */
+.project-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-links .btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid aquamarine;
+  border-radius: 0.5rem;
+  color: aquamarine;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+}
+
+.project-links .btn:hover {
+  background: aquamarine;
+  color: black;
+}
+.footer {
+  background-color: #111;
+  color: #fff;
+  padding: 2rem 1rem 1rem 1rem;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-brand h2 {
+  color: aquamarine;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.footer-brand p {
+  margin: 0.2rem 0 0 0;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: aquamarine;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00ffcc;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.footer-social a {
+  color: aquamarine;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #00ffcc;
+}
+
+.footer-bottom {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #aaa;
+  font-size: 0.85rem;
+  border-top: 1px solid #222;
+  padding-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* hidden off screen */
+    height: 100%;
+    width: 250px;
+    background: #111;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: right 0.4s ease;
+    z-index: 1000;
+  }
+  .nav-links.show {
+    right: 0; /* slide in */
+  }
+
+  .nav-links a {
+    font-size: 1.3rem;
+    color: aquamarine;
+    transition: 0.3s ease;
+  }
+  .nav-links a:hover {
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
+  }
+
+  /* Hamburger icon */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: aquamarine;
+    border-radius: 3px;
+    transition: all 0.4s ease;
+  }
+
+  /* Animate to X */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}
