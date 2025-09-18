@@ -61,7 +61,7 @@ header {
 .icons {
   display: flex;
   gap: 20px;
-  padding-right: 30px;
+  padding-right: 350px;
   justify-content: center;
   margin: 20px 0;
   font-size: 2rem;
@@ -412,3 +412,4 @@ header {
     transform: rotate(-45deg) translateY(-8px);
   }
 }
+
